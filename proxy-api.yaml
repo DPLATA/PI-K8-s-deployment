@@ -63,10 +63,10 @@ spec:
   selector:
     name: proxy-api
   type: LoadBalancer
-        
+
 ---
 
-apiVersion: apps/v1beta2 
+apiVersion: apps/v1beta2
 kind: Deployment
 metadata:
   name: proxy-api
@@ -101,11 +101,9 @@ spec:
           subPath: nginx.conf
       - name: flask-api
         # GCP
-        image: gcr.io/<PROJECT-ID>/flask-api
+        image: gcr.io/my-project-pi-278600/flask-api
         # IBM Cloud
         # image: registry.ng.bluemix.net/vcn/flask-api
         # Azure
         # image: vcnrc.azurecr.io/flask-api
         imagePullPolicy: IfNotPresent
-
-
